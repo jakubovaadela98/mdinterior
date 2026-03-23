@@ -8,6 +8,9 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+  <!-- Google Font pro menu -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
   <!-- Font Awesome pro sociální ikony -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -29,11 +32,12 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     .header-logo img {
-      width: 400px; /* upravená velikost */
-      max-width: 90%;
-      margin: 10px 0; /* menší mezera nad a pod logem */
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* jemný stín */
-      border-radius: 10px;
+  width: 400px; 
+  max-width: 90%;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* jemný, méně výrazný */
+}
     }
     nav {
       display: flex;
@@ -43,8 +47,12 @@
       margin-top: 10px;
     }
     nav a {
-      font-weight: 600;
-      transition: 0.3s;
+  font-family: 'Montserrat', sans-serif; /* nový font jen pro menu */
+  font-weight: 700;
+  text-transform: uppercase; /* všechna velká písmena */
+  font-size: 16px; /* můžeš zkusit 18px pro výraznější vzhled */
+  transition: 0.3s;
+}
     }
     nav a:hover { opacity: 0.7; }
 
