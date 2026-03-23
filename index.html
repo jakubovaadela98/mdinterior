@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Naše Firma</title>
+  <title>MD Interior</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -25,16 +25,24 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 30px 20px;
+      padding: 50px 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     .header-logo img {
-      width: 200px;
-      max-width: 80%;
-      margin-bottom: 15px;
+      width: 300px; /* velké logo */
+      max-width: 90%;
+      margin-bottom: 20px;
     }
-    nav { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; }
-    nav a { font-weight: 600; transition: 0.3s; }
+    nav {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav a {
+      font-weight: 600;
+      transition: 0.3s;
+    }
     nav a:hover { opacity: 0.7; }
 
     main { padding-top: 20px; }
@@ -105,7 +113,7 @@
     @media (max-width: 768px) {
       .portfolio { flex-direction: column; }
       nav { flex-direction: column; gap: 15px; align-items: center; }
-      .header-logo img { width: 150px; }
+      .header-logo img { width: 200px; }
     }
   </style>
 </head>
@@ -130,7 +138,7 @@
       <p></p>
     </section>
 
-    <!-- Ukázka práce -->
+    <!-- Naše práce -->
     <section id="portfolio">
       <h2>Ukázka naší práce</h2>
       <div class="portfolio">
