@@ -6,7 +6,7 @@
   <title>MD Interior</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome pro sociální ikony -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -40,26 +40,38 @@
       margin-top: 10px;
     }
   nav a {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
+  nav a {
+  nav a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 13px;
+  letter-spacing: 1px;
 
   color: white;
-  background-color: #205797;
 
-  padding: 10px 20px;
-  border-radius: 30px;
+  padding: 12px 22px;
+  border-radius: 40px;
+
+  background: linear-gradient(135deg, #205797, #3a7bd5);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 0 6px 20px rgba(32,87,151,0.3);
 
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
 }
 
 /* hover efekt */
 nav a:hover {
-  background-color: #104a86;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(32,87,151,0.5);
+  background: linear-gradient(135deg, #3a7bd5, #205797);
+}
 }
 
     main { padding-top: 20px; }
