@@ -58,11 +58,16 @@
 
   background: linear-gradient(135deg, #205797, #3a7bd5);
 
-  display: inline-block;
-
+  display: inline-block; /* to je důležité pro transform */
   box-shadow: 0 6px 20px rgba(32,87,151,0.25);
 
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+}
+
+nav a:hover {
+  transform: translateY(-4px); /* slide nahoru */
+  box-shadow: 0 10px 25px rgba(32,87,151,0.4);
+  background: linear-gradient(135deg, #3a7bd5, #205797);
 }
   }
 
