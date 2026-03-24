@@ -158,11 +158,11 @@
       .header-logo img { width: 200px; margin: 5px 0; }
     }
 
-    /* Ceník - rozšířené kartičky podle textu */
+    /* ===== CENÍK - šířka kartiček a text na řádku ===== */
 .pricing-container {
   display: flex;
   justify-content: center;
-  gap: 40px;        /* mezera mezi kartami */
+  gap: 40px;
   flex-wrap: wrap;
   margin-top: 40px;
 }
@@ -170,11 +170,10 @@
 .price-card {
   background: white;
   color: #205797;
-  padding: 30px 40px;   /* více místa uvnitř pro text */
+  padding: 30px 40px;   /* prostor uvnitř */
   border-radius: 15px;
-  width: auto;          /* automatická šířka podle obsahu */
-  max-width: 360px;     /* nepůjde moc široké */
-  min-width: 280px;     /* nepůjde moc úzké */
+  width: 450px;          /* širší kartičky */
+  min-width: 400px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
   transition: 0.3s;
 }
@@ -183,7 +182,11 @@
   list-style: none;
   padding: 0;
   text-align: left;
-  line-height: 1.6;      /* každá věta na vlastní řádek */
+  line-height: 1.8;
+}
+
+.price-card ul li {
+  white-space: nowrap;  /* věty na jednom řádku */
 }
 
 .price-card:hover {
@@ -234,8 +237,8 @@
       </div>
     </section>
 
-    <!-- CENÍK -->
-    <section id="pricing">
+    <!-- ===== CENÍK (rozšířený a upravený) ===== -->
+<section id="pricing">
   <h2>Ceník</h2>
 
   <div class="pricing-container">
