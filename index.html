@@ -12,251 +12,181 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
+    /* ===== BUBLINY ===== */
     .bubble {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background: url('images/bubbles.png') no-repeat center/contain; /* obrázek bublin */
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.9;
-  transform: translate(0,0) scale(1);
-  transition: transform 1s ease, opacity 1s ease;
-}
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #205797; background-color: #fff; }
-  a { text-decoration: none; }
-  img { max-width: 100%; height: auto; }
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('images/bubbles.png') no-repeat center/contain;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.9;
+      transform: translate(0,0) scale(1);
+      transition: transform 1s ease, opacity 1s ease;
+    }
 
-  /* Hlavička */
-  header {
-    width: 100%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 20px;
-  }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #205797; background-color: #fff; }
+    a { text-decoration: none; }
+    img { max-width: 100%; height: auto; }
 
-  .header-logo img {
-    width: 400px; 
-    max-width: 90%;
-    margin: 10px 0;
-    border-radius: 10px;
-  }
+    /* Hlavička */
+    header {
+      width: 100%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 20px;
+    }
 
-  nav {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 40px;
-  }
+    .header-logo img {
+      width: 400px; 
+      max-width: 90%;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
 
-  /* 🔥 MODERNÍ BUTTONY (OPRAVA) */
-  nav a {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 1px;
+    nav {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+    }
 
-  color: white;
-  text-decoration: none;
+    /* MODERNÍ BUTTONY */
+    nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
+      color: white;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, #205797, #3a7bd5);
+      display: inline-block;
+      box-shadow: 0 6px 20px rgba(32,87,151,0.25);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+    }
 
-  padding: 12px 22px;
-  border-radius: 40px;
+    nav a:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(32,87,151,0.4);
+      background: linear-gradient(135deg, #3a7bd5, #205797);
+    }
 
-  background: linear-gradient(135deg, #205797, #3a7bd5);
+    main { padding-top: 20px; }
 
-  display: inline-block; /* to je důležité pro transform */
-  box-shadow: 0 6px 20px rgba(32,87,151,0.25);
+    /* Sekce */
+    section { padding: 80px 20px; text-align: center; }
+    section:nth-of-type(odd) { background-color: #205797; color: white; }
+    section:nth-of-type(even) { background-color: #fff; color: #205797; }
+    section h1, section h2 { margin-bottom: 20px; }
 
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
-}
+    /* Portfolio */
+    .portfolio { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .portfolio img {
+      width: 300px;
+      border: 3px solid #205797;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .portfolio img:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
 
-nav a:hover {
-  transform: translateY(-4px); /* slide nahoru */
-  box-shadow: 0 10px 25px rgba(32,87,151,0.4);
-  background: linear-gradient(135deg, #3a7bd5, #205797);
-}
-  }
+    /* Formulář */
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      color: #205797;
+    }
+    input, textarea {
+      padding: 12px;
+      border: 2px solid #205797;
+      border-radius: 5px;
+      width: 100%;
+    }
+    button {
+      background-color: #205797;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    button:hover { background-color: #104a86; }
 
-  nav a:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(32,87,151,0.4);
-  background: linear-gradient(135deg, #3a7bd5, #205797);
-}
-}
-}
-    
-  }
+    /* Sociální sítě */
+    .social { margin-top: 20px; }
+    .social a { font-size: 32px; margin: 0 15px; color: inherit; transition: 0.3s; }
+    .social a:hover { color: #104a86; }
 
-  main { padding-top: 20px; }
+    /* Kontaktní info */
+    .company-info {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    section:nth-of-type(odd) .company-info { color: white; }
+    section:nth-of-type(even) .company-info { color: #205797; }
 
-  /* Sekce */
-  section { padding: 80px 20px; text-align: center; }
-  section:nth-of-type(odd) { background-color: #205797; color: white; }
-  section:nth-of-type(even) { background-color: #fff; color: #205797; }
-  section h1, section h2 { margin-bottom: 20px; }
+    /* Footer */
+    footer {
+      background-color: #205797;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
 
-  /* Portfolio */
-  .portfolio { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-  .portfolio img {
-    width: 300px;
-    border: 3px solid #205797;
-    border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
+    /* Responsivita */
+    @media (max-width: 768px) {
+      .portfolio { flex-direction: column; }
+      nav { flex-direction: column; gap: 20px; align-items: center; }
+      .header-logo img { width: 200px; margin: 5px 0; }
+    }
 
-  .portfolio img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  }
+    /* CENÍK */
+    .pricing-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .price-card {
+      background: white;
+      color: #205797;
+      padding: 30px 20px;
+      border-radius: 15px;
+      width: 260px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transition: 0.3s;
+    }
+    .price { font-size: 24px; font-weight: bold; margin-bottom: 15px; }
+    .price-card ul { list-style: none; padding: 0; text-align: left; }
+    .price-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
+    .featured { background: #205797; color: white; transform: scale(1.05); }
 
-  /* Formulář */
-  form {
-    max-width: 500px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    color: #205797;
-  }
-
-  input, textarea {
-    padding: 12px;
-    border: 2px solid #205797;
-    border-radius: 5px;
-    width: 100%;
-  }
-
-  button {
-    background-color: #205797;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-  }
-
-  button:hover { background-color: #104a86; }
-
-  /* Sociální sítě */
-  .social { margin-top: 20px; }
-  .social a { font-size: 32px; margin: 0 15px; color: inherit; transition: 0.3s; }
-  .social a:hover { color: #104a86; }
-
-  /* Kontaktní info */
-  .company-info {
-    margin-top: 20px;
-    font-size: 14px;
-  }
-
-  section:nth-of-type(odd) .company-info { color: white; }
-  section:nth-of-type(even) .company-info { color: #205797; }
-
-  /* Footer */
-  footer {
-    background-color: #205797;
-    color: white;
-    padding: 25px 20px;
-    text-align: center;
-  }
-
-  /* Responsivita */
-  @media (max-width: 768px) {
-    .portfolio { flex-direction: column; }
-    nav { flex-direction: column; gap: 20px; align-items: center; }
-    .header-logo img { width: 200px; margin: 5px 0; }
-  }
-
-  /* CENÍK */
-  .pricing-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 40px;
-  }
-
-  .price-card {
-    background: white;
-    color: #205797;
-    padding: 30px 20px;
-    border-radius: 15px;
-    width: 260px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    transition: 0.3s;
-  }
-
-  .price {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-
-  .price-card ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-  }
-
-  .price-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-  }
-
-  .featured {
-    background: #205797;
-    color: white;
-    transform: scale(1.05);
-  }
-</style>
+  </style>
 </head>
 <body>
-  <script id="bubble-js">
-const logo = document.getElementById('logo-trigger');
-
-logo.addEventListener('click', () => {
-  for (let i = 0; i < 15; i++) { // 15 autíček
-    const bubble = document.createElement('div');
-    bubble.classList.add('bubble');
-
-    // pozice loga
-    const rect = logo.getBoundingClientRect();
-    bubble.style.left = rect.left + rect.width/2 + 'px';
-    bubble.style.top = rect.top + rect.height/2 + 'px';
-
-    document.body.appendChild(bubble);
-
-    // náhodný směr a vzdálenost
-    const x = (Math.random() - 0.5) * 500; // -250px až +250px
-    const y = -Math.random() * 500;        // nahoru
-
-    // animace
-    setTimeout(() => {
-      bubble.style.transform = `translate(${x}px, ${y}px) scale(0.5)`;
-      bubble.style.opacity = 0;
-    }, 50);
-
-    // odstranění po animaci
-    setTimeout(() => {
-      bubble.remove();
-    }, 1200);
-  }
-});
-</script>
 
   <header>
     <div class="header-logo">
-      <img src="images/logo.png" alt="Logo firmy">
+      <img src="images/logo.png" alt="Logo firmy" id="logo-trigger">
     </div>
     <nav>
       <a href="#about">O nás</a>
@@ -288,12 +218,10 @@ logo.addEventListener('click', () => {
       </div>
     </section>
 
-    <!-- ===== CENÍK (přidaný) ===== -->
+    <!-- CENÍK -->
     <section id="pricing">
       <h2>Ceník</h2>
-
       <div class="pricing-container">
-
         <div class="price-card">
           <h3>🚗 Osobní auto</h3>
           <p class="price">od 1 500 Kč</p>
@@ -303,7 +231,6 @@ logo.addEventListener('click', () => {
             <li>✔ Ošetření plastů</li>
           </ul>
         </div>
-
         <div class="price-card featured">
           <h3>🚐 Dodávka</h3>
           <p class="price">od 2 000 Kč</p>
@@ -313,17 +240,15 @@ logo.addEventListener('click', () => {
             <li>✔ Odstranění zápachu</li>
           </ul>
         </div>
-
         <div class="price-card">
           <h3>🚛 Nákladní vůz</h3>
-          <p class="price">od 3000 Kč</p>
+          <p class="price">od 3 000 Kč</p>
           <ul>
             <li>✔ Čištění kabiny</li>
             <li>✔ Tepování matrace</li>
             <li>✔ Dle dohody</li>
           </ul>
         </div>
-
       </div>
     </section>
 
@@ -352,6 +277,40 @@ logo.addEventListener('click', () => {
   <footer>
     &copy; 2026 MD Interior
   </footer>
+
+  <!-- JS BUBLINY -->
+  <script>
+  const logo = document.getElementById('logo-trigger');
+
+  logo.addEventListener('click', () => {
+    for (let i = 0; i < 15; i++) { // 15 bublin
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+
+      // pozice loga
+      const rect = logo.getBoundingClientRect();
+      bubble.style.left = rect.left + rect.width/2 + 'px';
+      bubble.style.top = rect.top + rect.height/2 + 'px';
+
+      document.body.appendChild(bubble);
+
+      // náhodný směr a vzdálenost
+      const x = (Math.random() - 0.5) * 500; // -250 až +250px
+      const y = -Math.random() * 500;        // nahoru
+
+      // animace
+      setTimeout(() => {
+        bubble.style.transform = `translate(${x}px, ${y}px) scale(0.5)`;
+        bubble.style.opacity = 0;
+      }, 50);
+
+      // odstranění po animaci
+      setTimeout(() => {
+        bubble.remove();
+      }, 1200);
+    }
+  });
+  </script>
 
 </body>
 </html>
