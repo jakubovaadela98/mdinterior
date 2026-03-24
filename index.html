@@ -12,6 +12,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
+    .bubble {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url('images/bubbles.png') no-repeat center/contain; /* obrázek bublin */
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.9;
+  transform: translate(0,0) scale(1);
+  transition: transform 1s ease, opacity 1s ease;
+}
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #205797; background-color: #fff; }
   a { text-decoration: none; }
@@ -210,6 +221,38 @@ nav a:hover {
 </style>
 </head>
 <body>
+  <script id="bubble-js">
+const logo = document.getElementById('logo-trigger');
+
+logo.addEventListener('click', () => {
+  for (let i = 0; i < 15; i++) { // 15 autíček
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+
+    // pozice loga
+    const rect = logo.getBoundingClientRect();
+    bubble.style.left = rect.left + rect.width/2 + 'px';
+    bubble.style.top = rect.top + rect.height/2 + 'px';
+
+    document.body.appendChild(bubble);
+
+    // náhodný směr a vzdálenost
+    const x = (Math.random() - 0.5) * 500; // -250px až +250px
+    const y = -Math.random() * 500;        // nahoru
+
+    // animace
+    setTimeout(() => {
+      bubble.style.transform = `translate(${x}px, ${y}px) scale(0.5)`;
+      bubble.style.opacity = 0;
+    }, 50);
+
+    // odstranění po animaci
+    setTimeout(() => {
+      bubble.remove();
+    }, 1200);
+  }
+});
+</script>
 
   <header>
     <div class="header-logo">
