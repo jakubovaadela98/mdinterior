@@ -280,37 +280,36 @@
 
   <!-- JS BUBLINY -->
   <script>
-  const logo = document.getElementById('logo-trigger');
+const logo = document.getElementById('logo-trigger');
 
-  logo.addEventListener('click', () => {
-    for (let i = 0; i < 15; i++) { // 15 bublin
-      const bubble = document.createElement('div');
-      bubble.classList.add('bubble');
+logo.addEventListener('click', (event) => {
+  for (let i = 0; i < 15; i++) { // 15 bublin
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
 
-      // pozice loga
-      const rect = logo.getBoundingClientRect();
-      bubble.style.left = rect.left + rect.width/2 + 'px';
-      bubble.style.top = rect.top + rect.height/2 + 'px';
+    // místo středu loga použijeme přesné místo kliknutí
+    bubble.style.left = event.clientX + 'px';
+    bubble.style.top = event.clientY + 'px';
 
-      document.body.appendChild(bubble);
+    document.body.appendChild(bubble);
 
-      // náhodný směr a vzdálenost
-      const x = (Math.random() - 0.5) * 500; // -250 až +250px
-      const y = -Math.random() * 500;        // nahoru
+    // náhodný směr a vzdálenost
+    const x = (Math.random() - 0.5) * 500; // -250 až +250px
+    const y = -Math.random() * 500;        // nahoru
 
-      // animace
-      setTimeout(() => {
-        bubble.style.transform = `translate(${x}px, ${y}px) scale(0.5)`;
-        bubble.style.opacity = 0;
-      }, 50);
+    // animace
+    setTimeout(() => {
+      bubble.style.transform = `translate(${x}px, ${y}px) scale(0.5)`;
+      bubble.style.opacity = 0;
+    }, 50);
 
-      // odstranění po animaci
-      setTimeout(() => {
-        bubble.remove();
-      }, 1200);
-    }
-  });
-  </script>
+    // odstranění po animaci
+    setTimeout(() => {
+      bubble.remove();
+    }, 1200);
+  }
+});
+</script>
 
 </body>
 </html>
