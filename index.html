@@ -158,11 +158,11 @@
       .header-logo img { width: 200px; margin: 5px 0; }
     }
 
-    /* Ceník - upravené pro delší text */
+    /* Ceník - rozšířené kartičky podle textu */
 .pricing-container {
   display: flex;
   justify-content: center;
-  gap: 40px;        /* větší mezera mezi kartami */
+  gap: 40px;        /* mezera mezi kartami */
   flex-wrap: wrap;
   margin-top: 40px;
 }
@@ -170,10 +170,11 @@
 .price-card {
   background: white;
   color: #205797;
-  padding: 40px 30px;     /* více prostoru uvnitř */
+  padding: 30px 40px;   /* více místa uvnitř pro text */
   border-radius: 15px;
-  width: 320px;            /* širší než dřív */
-  min-width: 280px;        /* nepůjde moc zmenšit */
+  width: auto;          /* automatická šířka podle obsahu */
+  max-width: 360px;     /* nepůjde moc široké */
+  min-width: 280px;     /* nepůjde moc úzké */
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
   transition: 0.3s;
 }
@@ -182,7 +183,7 @@
   list-style: none;
   padding: 0;
   text-align: left;
-  line-height: 1.6;        /* větší mezera mezi řádky */
+  line-height: 1.6;      /* každá věta na vlastní řádek */
 }
 
 .price-card:hover {
