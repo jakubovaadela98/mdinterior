@@ -13,19 +13,30 @@
 
   <style>
     
-    /* ===== ABOUT SECTION - odstavce a podpis ===== */
+#about .about-text {
+  max-width: 800px;        
+  margin: 0 auto;          
+  text-align: left;        
+}
+
 #about p {
-  margin-bottom: 20px;       /* mezera mezi odstavci */
-  line-height: 1.8;          /* lepší čitelnost textu */
-  font-size: 16px;           /* příjemná velikost písma */
+  margin-bottom: 20px;     
+  line-height: 1.8;        
+  font-size: 16px;         
+  color: white;            
+}
+
+#about h1 {
+  color: white;            
+  margin-bottom: 30px;
 }
 
 #about .about-signature {
-  margin-top: 30px;          /* prostor nad podpisem */
-  font-size: 18px;           /* větší text pro podpis */
-  color: #104a86;            /* tmavší modrá pro kontrast */
-  font-weight: 700;          /* tučné písmo */
-  text-align: center;        /* podpis vycentrovaný */
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 700;        
+  color: #ffd966;          
+  text-align: center;      
 }
     /* ===== BUBLINY ===== */
     .bubble {
@@ -250,17 +261,19 @@
     <section id="about">
   <h1>O nás</h1>
   
-  <p>Jsme Matúš a Dan - dva kamarádi z Brna, kteří v týdnu cestují kamionem a o víkendech se věnují čištění interiérů vozidel. Čistíme osobní auta, dodávky i náklaďáky.</p>
-  
-  <p>MD Interior vzniklo úplně přirozeně. Chtěli jsme dělat něco pořádně, dávat si záležet na každém detailu a zároveň nabídnout službu, za kterou se můžeme sami postavit.</p>
-  
-  <p>Každému autu věnujeme individuální péči. Ať už jde o běžné auto na každodenní ježdění, rodinný vůz nebo pracovní dodávku, vždycky se snažíme, aby výsledek stál za to.</p>
-  
-  <p>Tím, že to děláme hlavně o víkendech, si držíme rozumné ceny a zároveň máme prostor věnovat každému vozu dostatek času a pozornosti.</p>
-  
-  <p>Naším cílem je jednoduchá věc - vrátit autům čistotu, svěžest a dobrý pocit z každé nastávající jízdy.</p>
-  
-  <p class="about-signature"><strong>Matúš & Dan, MD Interior</strong></p>
+  <div class="about-text">
+    <p>Jsme Matúš a Dan - dva kamarádi z Brna, kteří v týdnu cestují kamionem a o víkendech se věnují čištění interiérů vozidel. Čistíme osobní auta, dodávky i náklaďáky.</p>
+    
+    <p>MD Interior vzniklo úplně přirozeně. Chtěli jsme dělat něco pořádně, dávat si záležet na každém detailu a zároveň nabídnout službu, za kterou se můžeme sami postavit.</p>
+    
+    <p>Každému autu věnujeme individuální péči. Ať už jde o běžné auto na každodenní ježdění, rodinný vůz nebo pracovní dodávku, vždycky se snažíme, aby výsledek stál za to.</p>
+    
+    <p>Tím, že to děláme hlavně o víkendech, si držíme rozumné ceny a zároveň máme prostor věnovat každému vozu dostatek času a pozornosti.</p>
+    
+    <p>Naším cílem je jednoduchá věc - vrátit autům čistotu, svěžest a dobrý pocit z každé nastávající jízdy.</p>
+    
+    <p class="about-signature"><strong>Matúš & Dan, MD Interior</strong></p>
+  </div>
 </section>
     
     <section id="services">
