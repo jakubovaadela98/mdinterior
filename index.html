@@ -1,38 +1,27 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MD Interior</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD Interior</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome pro sociální ikony -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Font Awesome pro sociální ikony -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
-/* --- tvé původní styly --- */
-#about .about-text { max-width: 800px; margin:0 auto; text-align:left; }
-#about p { margin-bottom:20px; line-height:1.8; font-size:16px; color:white; }
-#about h1 { color:white; margin-bottom:30px; }
-#about .about-signature { margin-top:30px; font-size:18px; font-weight:700; color:white; text-align:center; }
-
-/* Bubliny */
-.bubble { position:absolute; width:30px; height:30px; background:url('images/bubbles.png') no-repeat center/contain; pointer-events:none; z-index:9999; opacity:0.9; transform:translate(0,0) scale(1); transition: transform 1s ease, opacity 1s ease; }
-
+<style>
+/* ==== HLAVNÍ STYLY ==== */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Poppins', sans-serif; line-height:1.6; color:#205797; background-color:#fff; }
+body { font-family:'Poppins',sans-serif; line-height:1.6; color:#205797; background-color:#fff; }
 a { text-decoration:none; }
 img { max-width:100%; height:auto; }
 
-/* Hlavička */
 header { width:100%; background-color:white; display:flex; flex-direction:column; align-items:center; padding:20px 20px; }
 .header-logo img { width:400px; max-width:90%; margin:10px 0; border-radius:10px; }
 nav { display:flex; gap:30px; flex-wrap:wrap; justify-content:center; margin-top:40px; }
-
-/* Moderní buttony */
-nav a { font-family: 'Montserrat', sans-serif; font-weight:600; text-transform:uppercase; font-size:13px; letter-spacing:1px; color:white; text-decoration:none; padding:12px 22px; border-radius:40px; background:linear-gradient(135deg, #205797, #3a7bd5); display:inline-block; box-shadow:0 6px 20px rgba(32,87,151,0.25); transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease; }
+nav a { font-family:'Montserrat',sans-serif; font-weight:600; text-transform:uppercase; font-size:13px; letter-spacing:1px; color:white; text-decoration:none; padding:12px 22px; border-radius:40px; background:linear-gradient(135deg, #205797, #3a7bd5); display:inline-block; box-shadow:0 6px 20px rgba(32,87,151,0.25); transition:0.3s; }
 nav a:hover { transform:translateY(-4px); box-shadow:0 10px 25px rgba(32,87,151,0.4); background:linear-gradient(135deg, #3a7bd5, #205797); }
 
 main { padding-top:20px; }
@@ -41,34 +30,18 @@ section:nth-of-type(odd) { background-color:#205797; color:white; }
 section:nth-of-type(even) { background-color:#fff; color:#205797; }
 section h1, section h2 { margin-bottom:20px; }
 
+/* About */
+#about .about-text { max-width:800px; margin:0 auto; text-align:left; }
+#about p { margin-bottom:20px; line-height:1.8; font-size:16px; color:white; }
+#about h1 { color:white; margin-bottom:30px; }
+#about .about-signature { margin-top:30px; font-size:18px; font-weight:700; color:white; text-align:center; }
+
 /* Portfolio */
 .portfolio { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
 .portfolio img { width:300px; border:3px solid #205797; border-radius:10px; transition: transform 0.3s, box-shadow 0.3s; }
 .portfolio img:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
 
-/* Formulář */
-form { max-width:500px; margin:auto; display:flex; flex-direction:column; gap:15px; background-color:white; padding:30px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.2); color:#205797; }
-input, textarea { padding:12px; border:2px solid #205797; border-radius:5px; width:100%; }
-button { background-color:#205797; color:white; padding:12px; border:none; border-radius:5px; cursor:pointer; font-size:16px; transition:0.3s; }
-button:hover { background-color:#104a86; }
-
-/* Sociální sítě */
-.social { margin-top:20px; }
-.social a { font-size:50px; margin:0 15px; color:inherit; transition:0.3s; }
-.social a:hover { color:#104a86; transform:scale(1.2); }
-
-/* Kontaktní info */
-.company-info { margin-top:20px; font-size:14px; }
-section:nth-of-type(odd) .company-info { color:white; }
-section:nth-of-type(even) .company-info { color:#205797; }
-
-/* Footer */
-footer { background-color:#205797; color:white; padding:25px 20px; text-align:center; position:relative; }
-
-/* Responsivita */
-@media (max-width:768px) { .portfolio { flex-direction:column; } nav { flex-direction:column; gap:20px; align-items:center; } .header-logo img { width:200px; margin:5px 0; } }
-
-/* Ceník */
+/* Pricing */
 .pricing-container { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin-top:40px; }
 .price-card { background:white; color:#205797; padding:30px 40px; border-radius:15px; width:450px; min-width:400px; box-shadow:0 8px 25px rgba(0,0,0,0.15); transition:0.3s; }
 .price-card ul { list-style:none; padding:0; text-align:left; line-height:1.8; }
@@ -77,53 +50,76 @@ footer { background-color:#205797; color:white; padding:25px 20px; text-align:ce
 .featured { background:#205797; color:white; transform:scale(1.05); }
 .pricing-note-box { margin-top:40px; max-width:700px; margin-left:auto; margin-right:auto; background:rgba(255,255,255,0.1); border:2px solid rgba(255,255,255,0.3); backdrop-filter:blur(5px); padding:20px 25px; border-radius:12px; font-size:15px; line-height:1.6; box-shadow:0 6px 20px rgba(0,0,0,0.15); }
 
-/* Kontaktní box */
-.contact-info-box { max-width:500px; margin:40px auto 0 auto; padding:25px 30px; background-color:white; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.1); text-align:center; color:#205797; }
+/* Formulář a kontakt */
+form { max-width:500px; margin:auto; display:flex; flex-direction:column; gap:15px; background-color:white; padding:30px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.2); color:#205797; }
+input, textarea { padding:12px; border:2px solid #205797; border-radius:5px; width:100%; }
+button { background-color:#205797; color:white; padding:12px; border:none; border-radius:5px; cursor:pointer; font-size:16px; transition:0.3s; }
+button:hover { background-color:#104a86; }
+
+/* Sociální sítě */
+.contact-info-box { max-width:500px; margin:40px auto 0 auto; padding:25px 30px; background-color:#fff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.1); text-align:center; color:#205797; }
 .contact-info-box h2 { margin-bottom:15px; color:#205797; }
 .contact-info-box p { margin:8px 0; font-size:16px; }
 .contact-info-box a { color:#205797; text-decoration:none; font-weight:600; }
 .contact-info-box a:hover { text-decoration:underline; }
+.contact-info-box .social { margin-top:20px; }
+.contact-info-box .social a { font-size:50px; margin:0 15px; transition:0.3s; }
+.contact-info-box .social a:hover { color:#104a86; transform:scale(1.2); }
 
-/* Modaly */
-.modal { display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.5); }
-.modal-content { background-color:white; margin:10% auto; padding:20px; border-radius:12px; width:90%; max-width:600px; text-align:left; position:relative; }
+/* Footer */
+footer { background-color:#205797; color:white; padding:25px 20px; text-align:center; }
+footer a { color:white; text-decoration:underline; margin:0 10px; cursor:pointer; }
+
+/* Modal */
+.modal { display:none; position:fixed; z-index:999; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.6); }
+.modal-content { background-color:#fff; margin:10% auto; padding:20px; border-radius:10px; max-width:700px; text-align:left; }
 .modal-content h2 { margin-top:0; }
-.modal-content .close { position:absolute; top:10px; right:15px; font-size:28px; font-weight:bold; cursor:pointer; color:#205797; }
+.close { color:#205797; float:right; font-size:28px; font-weight:bold; cursor:pointer; }
+.close:hover { color:#104a86; }
+
+/* Responsivita */
+@media(max-width:768px){ .portfolio{flex-direction:column;} nav{flex-direction:column; gap:20px; align-items:center;} .header-logo img{width:200px;margin:5px 0;} }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="header-logo">
-    <img src="images/logo.png" alt="Logo firmy" id="logo-trigger">
-  </div>
-  <nav>
-    <a href="#about">O nás</a>
-    <a href="#services">Naše služby</a>
-    <a href="#portfolio">Ukázka práce</a>
-    <a href="#pricing">Ceník</a>
-    <a href="#contact">Kontakt</a>
-  </nav>
+<div class="header-logo"><img src="images/logo.png" alt="Logo firmy" id="logo-trigger"></div>
+<nav>
+<a href="#about">O nás</a>
+<a href="#services">Naše služby</a>
+<a href="#portfolio">Ukázka práce</a>
+<a href="#pricing">Ceník</a>
+<a href="#contact">Kontakt</a>
+</nav>
 </header>
 
 <main>
-
-<!-- Sekce about -->
+<!-- About -->
 <section id="about">
 <h1>O nás</h1>
 <div class="about-text">
-<p>Jsme Matúš a Dan - dva kamarádi z Brna...</p>
+<p>Jsme Matúš a Dan - dva kamarádi z Brna, kteří v týdnu cestují kamionem a o víkendech se věnují čištění interiérů vozidel. Čistíme osobní auta, dodávky i náklaďáky.</p>
+<p>MD Interior vzniklo úplně přirozeně. Chtěli jsme dělat něco pořádně, dávat si záležet na každém detailu a zároveň nabídnout službu, za kterou se můžeme sami postavit.</p>
+<p>Každému autu věnujeme individuální péči. Ať už jde o běžné auto na každodenní ježdění, rodinný vůz nebo pracovní dodávku, vždycky se snažíme, aby výsledek stál za to.</p>
+<p>Tím, že to děláme hlavně o víkendech, si držíme rozumné ceny a zároveň máme prostor věnovat každému vozu dostatek času a pozornosti.</p>
+<p>Naším cílem je jednoduchá věc - vrátit autům čistotu, svěžest a dobrý pocit z každé nastávající jízdy.</p>
 <p class="about-signature"><strong>Matúš & Dan, MD Interior</strong></p>
 </div>
 </section>
 
-<!-- Sekce services -->
+<!-- Services -->
 <section id="services">
 <h2>Naše služby</h2>
-<!-- ... tvoje služby ... -->
+<div style="max-width:800px;margin:0 auto;padding:20px;text-align:left;">
+<div style="display:flex;align-items:center;gap:15px;margin-bottom:20px;"><span style="font-size:30px; width:40px; display:inline-block; text-align:center;">🧽</span><div style="flex:1;"><h3>Důkladné čištění interiérů</h3><p>Osobní auta, dodávky i nákladní vozy - věnujeme pozornost každému detailu.</p></div></div>
+<div style="display:flex;align-items:center;gap:15px;margin-bottom:20px;"><span style="font-size:30px; width:40px; display:inline-block; text-align:center;">🛠</span><div style="flex:1;"><h3>Kvalitní vybavení a šetrné prostředky</h3><p>Vaše auto bude čisté a materiály chráněné.</p></div></div>
+<div style="display:flex;align-items:center;gap:15px;margin-bottom:20px;"><span style="font-size:30px; width:40px; display:inline-block; text-align:center;">🌿</span><div style="flex:1;"><h3>Odstranění nepříjemných pachů</h3><p>Žádný zápach, jen příjemný pocit při každé jízdě.</p></div></div>
+<div style="display:flex;align-items:center;gap:15px;margin-bottom:20px;"><span style="font-size:30px; width:40px; display:inline-block; text-align:center;">🚗</span><div style="flex:1;"><h3>Čištění podle vás</h3><p>Přijedeme k Vám, nebo Vy přijedete k nám - podle toho, co Vám vyhovuje.</p></div></div>
+</div>
 </section>
 
-<!-- Sekce portfolio -->
+<!-- Portfolio -->
 <section id="portfolio">
 <h2>Ukázka naší práce</h2>
 <div class="portfolio">
@@ -133,15 +129,45 @@ footer { background-color:#205797; color:white; padding:25px 20px; text-align:ce
 </div>
 </section>
 
-<!-- Sekce pricing -->
+<!-- Pricing -->
 <section id="pricing">
 <h2>Ceník</h2>
 <div class="pricing-container">
-<!-- ... tvoje ceníky ... -->
+<div class="price-card">
+<h3>🚗 Osobní auto</h3>
+<ul>
+<li>✔ Čištění interiéru + vysátí: 1 800 Kč</li>
+<li>✔ Čištění interiéru + tepování sedaček: 2 400 Kč</li>
+<li>✔ Malá auta / SUV: 1 800 - 2 100 Kč</li>
+<li>➕ Čištění zvířecích chlupů: +300 Kč/hod</li>
+</ul>
+</div>
+<div class="price-card featured">
+<h3>🚐 Dodávka</h3>
+<ul>
+<li>✔ Čištění interiéru + vysátí: 2 400 Kč</li>
+<li>✔ Čištění interiéru + tepování: 3 200 Kč</li>
+<li>➕ Čištění zvířecích chlupů: +300 Kč/hod</li>
+</ul>
+</div>
+<div class="price-card">
+<h3>🚛 Kamion / nákladní vůz</h3>
+<ul>
+<li>✔ Čištění interiéru + vysátí: 3 000 Kč</li>
+<li>✔ Čištění interiéru + tepování sedaček: 3 600 Kč</li>
+<li>➕ Čištění zvířecích chlupů: +300 Kč/hod</li>
+</ul>
+</div>
+<div class="pricing-note-box">
+⚠️ U velmi znečištěných vozidel se cena může lišit dle rozsahu práce. <br>
+⚠️ Ceny zahrnují Brno. <br>
+🔹 Do 10 km od Brna: příplatek 250 Kč. <br>
+🔹 Nad 10 km od Brna: příplatek 6 Kč za km.
+</div>
 </div>
 </section>
 
-<!-- Sekce contact -->
+<!-- Contact -->
 <section id="contact">
 <h2>Poptávkový formulář</h2>
 <form action="https://formspree.io/f/xbdzvvez" method="POST">
@@ -165,69 +191,33 @@ footer { background-color:#205797; color:white; padding:25px 20px; text-align:ce
 </div>
 </section>
 
-<!-- Footer s odkazy na modaly -->
+</main>
+
 <footer>
-  <a href="#" id="openGDPR" style="color:white; margin-right:15px;">GDPR</a>
-  <a href="#" id="openTerms" style="color:white;">Obchodní podmínky</a>
-  <br><br>
-  &copy; 2026 Adéla Jakubová
+<a id="openTerms">Obchodní podmínky</a> | <a id="openGDPR">GDPR</a><br>
+&copy; 2026 Adéla Jakubová
 </footer>
 
-<!-- Modal GDPR -->
-<div id="modalGDPR" class="modal">
-  <div class="modal-content">
-    <span class="close" id="closeGDPR">&times;</span>
-    <h2>Ochrana osobních údajů (GDPR)</h2>
-    <p>Vaše osobní údaje (např. jméno, e-mail, zpráva) shromažďujeme pouze za účelem zodpovězení vaší poptávky nebo dotazu. Vaše údaje nebudeme poskytovat třetím stranám ani je používat pro jiné účely.</p>
-    <p><strong>Správce osobních údajů:</strong> MD Interior, IČO: bude doplněno, Brno</p>
-    <p><strong>Účel zpracování:</strong> odpověď na poptávku, komunikace se zákazníkem.</p>
-    <p><strong>Doba uchovávání:</strong> údaje uchováváme po dobu nezbytnou k vyřízení vašeho požadavku, maximálně 3 roky.</p>
-    <p><strong>Vaše práva:</strong> Máte právo kdykoli požádat o přístup k údajům, jejich opravu, vymazání nebo omezení zpracování. Pro uplatnění práv nás kontaktujte na <a href="mailto:objednavky@mdinterior.cz">objednavky@mdinterior.cz</a>.</p>
-  </div>
-</div>
-
-<!-- Modal Obchodní podmínky -->
+<!-- Modály -->
 <div id="modalTerms" class="modal">
-  <div class="modal-content">
-    <span class="close" id="closeTerms">&times;</span>
-    <h2>Obchodní podmínky</h2>
-    <p>Tyto obchodní podmínky upravují poskytování služeb společnosti MD Interior.</p>
-    <p><strong>Poskytovatel:</strong> MD Interior, IČO: bude doplněno, Brno</p>
-    <p><strong>Objednávky a služby:</strong> Služby jsou poskytovány na základě vaší poptávky přes kontaktní formulář nebo email.</p>
-    <p><strong>Ceny:</strong> Ceny služeb jsou vždy dohodnuty individuálně.</p>
-    <p><strong>Reklamace:</strong> V případě nespokojenosti nás kontaktujte na <a href="mailto:objednavky@mdinterior.cz">objednavky@mdinterior.cz</a>.</p>
-  </div>
+<div class="modal-content">
+<span class="close" id="closeTerms">&times;</span>
+<h2>Obchodní podmínky</h2>
+<p>Tyto obchodní podmínky upravují poskytování služeb společnosti MD Interior.</p>
+<p><strong>Poskytovatel:</strong> MD Interior, IČO: bude doplněno, Brno</p>
+<p><strong>Objednávky a služby:</strong> Služby jsou poskytovány na základě vaší poptávky přes kontaktní formulář nebo email.</p>
+<p><strong>Ceny:</strong> Ceny služeb jsou vždy dohodnuty individuálně.</p>
+<p><strong>Reklamace:</strong> V případě nespokojenosti nás kontaktujte na <a href="mailto:objednavky@mdinterior.cz">objednavky@mdinterior.cz</a>. Budeme se snažit najít řešení individuálně.</p>
+<p><strong>Platnost:</strong> Tyto podmínky jsou platné od 1.1.2026.</p>
+</div>
 </div>
 
-<!-- JS BUBLINY + Modaly -->
-<script>
-const logo = document.getElementById('logo-trigger');
-logo.addEventListener('click', (event) => {
-  for (let i=0;i<15;i++){
-    const bubble=document.createElement('div');
-    bubble.classList.add('bubble');
-    bubble.style.left=event.clientX+'px';
-    bubble.style.top=event.clientY+'px';
-    document.body.appendChild(bubble);
-    const x=(Math.random()-0.5)*500;
-    const y=-Math.random()*500;
-    setTimeout(()=>{bubble.style.transform=`translate(${x}px,${y}px) scale(0.5)`; bubble.style.opacity=0;},50);
-    setTimeout(()=>{bubble.remove();},1200);
-  }
-});
-
-// Modal script
-const modalGDPR = document.getElementById('modalGDPR');
-const modalTerms = document.getElementById('modalTerms');
-document.getElementById('openGDPR').onclick = () => { modalGDPR.style.display='block'; }
-document.getElementById('openTerms').onclick = () => { modalTerms.style.display='block'; }
-document.getElementById('closeGDPR').onclick = () => { modalGDPR.style.display='none'; }
-document.getElementById('closeTerms').onclick = () => { modalTerms.style.display='none'; }
-window.onclick = function(event){
-  if(event.target == modalGDPR) modalGDPR.style.display='none';
-  if(event.target == modalTerms) modalTerms.style.display='none';
-}
-</script>
-
-</body>
-</html>
+<div id="modalGDPR" class="modal">
+<div class="modal-content">
+<span class="close" id="closeGDPR">&times;</span>
+<h2>Ochrana osobních údajů (GDPR)</h2>
+<p>Vaše osobní údaje (např. jméno, e-mail, zpráva) shromažďujeme pouze za účelem zodpovězení vaší poptávky nebo dotazu. Vaše údaje nebudeme poskytovat třetím stranám ani je používat pro jiné účely.</p>
+<p><strong>Správce osobních údajů:</strong> MD Interior, IČO: bude doplněno, Brno</p>
+<p><strong>Účel zpracování:</strong> odpověď na poptávku, komunikace se zákazníkem.</p>
+<p><strong>Doba uchovávání:</strong> údaje uchováváme po dobu nezbytnou k vyřízení vašeho požadavku, maximálně 3 roky.</p>
+<p><strong>Vaše práva:</strong> Máte právo kdykoli požádat o přístup k údajům, jejich opravu, vymazání nebo omezení zpracování. Pro uplatnění práv nás kontaktujte na <a href="mailto:objednav
