@@ -302,57 +302,78 @@ footer a:hover {
   }
 </script>
   
+<style>
+.bubble {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.8;
+  animation: riseSpread 5s ease-out forwards;
+}
+
+@keyframes riseSpread {
+  0% {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(var(--x-move), -400px) scale(1);
+    opacity: 0;
+  }
+}
+</style>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
   const logo = document.getElementById("logo-trigger");
 
-  logo.addEventListener("click", () => {
-    const rect = logo.getBoundingClientRect();
+  logo.addEventListener("click", (e) => {
+    const clickX = e.clientX;
+    const clickY = e.clientY;
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 25; i++) {
       setTimeout(() => {
-        createBubble(rect);
-      }, i * 80);
+        createBubble(clickX, clickY);
+      }, i * 70); // postupné generování
     }
   });
 
-  function createBubble(rect) {
+  function createBubble(x, y) {
     const bubble = document.createElement("div");
     bubble.classList.add("bubble");
 
-    const size = Math.random() * 25 + 10;
+    const size = Math.random() * 15 + 5;
     bubble.style.width = size + "px";
     bubble.style.height = size + "px";
 
-    const startX = rect.left + rect.width / 2 + (Math.random() * 60 - 30);
-    const startY = rect.top + rect.height / 2;
+    bubble.style.left = x + "px";
+    bubble.style.top = y + "px";
 
-    bubble.style.left = startX + "px";
-    bubble.style.top = startY + "px";
-
+    // náhodný rozptyl do stran
     const moveX = (Math.random() * 200 - 100) + "px";
     bubble.style.setProperty('--x-move', moveX);
 
+    // různé odstíny modré
     const colors = [
       "rgba(58,123,213,0.4)",
       "rgba(32,87,151,0.5)",
       "rgba(100,160,255,0.4)",
       "rgba(180,220,255,0.5)"
     ];
-
     const color = colors[Math.floor(Math.random() * colors.length)];
 
     bubble.style.background = `radial-gradient(circle, rgba(255,255,255,0.9), ${color})`;
-    bubble.style.boxShadow = `0 0 20px ${color}`;
+    bubble.style.boxShadow = `0 0 15px ${color}`;
 
     document.body.appendChild(bubble);
 
     setTimeout(() => {
       bubble.remove();
-    }, 6000);
+    }, 5000);
   }
-
 });
 </script>
   
